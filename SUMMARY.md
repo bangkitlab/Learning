@@ -4,7 +4,7 @@
 
 ## 📱 Flutter
 
-* [🔭 dicoding](flutter/dicoding/README.md)
+* [🔭 Dicoding](flutter/dicoding/README.md)
   * [📗 Persiapan Belajar](flutter/dicoding/persiapan-belajar/README.md)
     * [📖 Glosarium](flutter/dicoding/persiapan-belajar/glosarium.md)
     * [📖 Daftar Referensi](flutter/dicoding/persiapan-belajar/daftar-referensi.md)
