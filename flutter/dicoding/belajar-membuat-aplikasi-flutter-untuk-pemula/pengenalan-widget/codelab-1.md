@@ -87,10 +87,12 @@ Pada layout di atas kita dapat memetakan widget-widget dalam bentuk diagram sepe
       }
     }
     ```
-6. Ketika Anda menyimpan project atau menjalankan hot reload, tampilan aplikasi Anda sekarang mungkin tidak sesuai dengan keinginan, seperti teks terlalu ke atas dan juga terlalu kecil.\
-   [![202104251322093fcb5140ee8a825f4ec2150ec6b9fe84.jpeg](https://d17ivq9b7rppb3.cloudfront.net/original/academy/202104251322093fcb5140ee8a825f4ec2150ec6b9fe84.jpeg)](https://www.dicoding.com/academies/159/tutorials/6502#)\
-   Untuk itulah kita perlu membungkus widget Text ke dalam Container supaya kita dapat memberikan property seperti margin atau padding. Jika Anda menggunakan IDE Android Studio, Anda dapat memanfaatkan shortcut **Alt+Enter** untuk membungkus widget ke widget lain.\
-   [![202104251322465819b8c1d2b88fdd3ec6d029a0689961.gif](https://d17ivq9b7rppb3.cloudfront.net/original/academy/202104251322465819b8c1d2b88fdd3ec6d029a0689961.gif)](https://www.dicoding.com/academies/159/tutorials/6502#)
+6.  Ketika Anda menyimpan project atau menjalankan hot reload, tampilan aplikasi Anda sekarang mungkin tidak sesuai dengan keinginan, seperti teks terlalu ke atas dan juga terlalu kecil.\
+    [![202104251322093fcb5140ee8a825f4ec2150ec6b9fe84.jpeg](https://d17ivq9b7rppb3.cloudfront.net/original/academy/202104251322093fcb5140ee8a825f4ec2150ec6b9fe84.jpeg)](https://www.dicoding.com/academies/159/tutorials/6502#)\
+    Untuk itulah kita perlu membungkus widget Text ke dalam Container supaya kita dapat memberikan property seperti margin atau padding. Jika Anda menggunakan IDE Android Studio, Anda dapat memanfaatkan shortcut **Alt+Enter** untuk membungkus widget ke widget \
+
+
+    ![](https://d17ivq9b7rppb3.cloudfront.net/original/academy/202104251322465819b8c1d2b88fdd3ec6d029a0689961.gif)
 7.  Tambahkan margin atas supaya teks memiliki jarak terhadap bagian atas layar.
 
     ```
@@ -153,7 +155,11 @@ Pada layout di atas kita dapat memetakan widget-widget dalam bentuk diagram sepe
     ```
 
     Lakukan hot reload. Tidak ada perubahan, apa sebabnya? Jika menggunakan Android Studio Anda dapat memanfaatkan fitur Flutter Inspector untuk melihat layout widget di dalam aplikasi.\
-    [![20210425132539b83ca0cdc01669f05d97fbb95f9e5c4c.gif](https://d17ivq9b7rppb3.cloudfront.net/original/academy/20210425132539b83ca0cdc01669f05d97fbb95f9e5c4c.gif)](https://www.dicoding.com/academies/159/tutorials/6502#)\
+
+
+    ![](https://d17ivq9b7rppb3.cloudfront.net/original/academy/20210425132539b83ca0cdc01669f05d97fbb95f9e5c4c.gif)
+
+    \
     Dari gambar di atas bisa kita lihat ternyata layout aplikasi kita tidak penuh hingga seluruh halaman. Ini disebabkan sisi horizontal dari Column hanya menyesuaikan dengan konten yang ada di dalamnya. Untuk memaksimalkan ukuran lebar dari Column, tambahkan kode berikut:
 
     ```
@@ -177,7 +183,8 @@ Pada layout di atas kita dapat memetakan widget-widget dalam bentuk diagram sepe
     ),
     ```
 10. Setelah menyelesaikan judul, selanjutnya kita akan membuat bagian kedua yaitu informasi dari tempat wisata.\
-    [![20210425132634936b9f6bc4d83c33d804ba3918392edd.jpeg](https://d17ivq9b7rppb3.cloudfront.net/original/academy/20210425132634936b9f6bc4d83c33d804ba3918392edd.jpeg)](https://www.dicoding.com/academies/159/tutorials/6502#)Seperti yang terlihat kita perlu menyusun widget secara horizontal dan vertikal. Mari tambahkan child kedua dari Column dengan sebuah Container berisi Row. Tambahkan juga margin pada sisi atas dan bawah untuk memberikan jarak antar widget.
+    [![20210425132634936b9f6bc4d83c33d804ba3918392edd.jpeg](https://d17ivq9b7rppb3.cloudfront.net/original/academy/20210425132634936b9f6bc4d83c33d804ba3918392edd.jpeg)](https://www.dicoding.com/academies/159/tutorials/6502#)\
+    Seperti yang terlihat kita perlu menyusun widget secara horizontal dan vertikal. Mari tambahkan child kedua dari Column dengan sebuah Container berisi Row. Tambahkan juga margin pada sisi atas dan bawah untuk memberikan jarak antar widget.
 
     ```
     class DetailScreen extends StatelessWidget {
@@ -371,5 +378,7 @@ Pada layout di atas kita dapat memetakan widget-widget dalam bentuk diagram sepe
       }
     }
     ```
+
+![](https://d17ivq9b7rppb3.cloudfront.net/original/academy/202104251322465819b8c1d2b88fdd3ec6d029a0689961.gif)
 
 Anda juga dapat mengunduh keseluruhan kodenya pada tautan berikut: [https://github.com/dicodingacademy/a159-flutter-pemula-labs](https://github.com/dicodingacademy/a159-flutter-pemula-labs)

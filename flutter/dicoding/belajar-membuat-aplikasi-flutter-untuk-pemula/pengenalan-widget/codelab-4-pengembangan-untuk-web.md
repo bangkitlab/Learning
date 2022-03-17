@@ -4,7 +4,7 @@ Sejauh ini kita telah mengembangkan aplikasi Wisata Bandung untuk platform mobil
 
 Hasil akhir dari codelab ini akan seperti berikut:
 
-[![2021042521184504cad335f61fb247bf566b59f39d1bcf.gif](https://d17ivq9b7rppb3.cloudfront.net/original/academy/2021042521184504cad335f61fb247bf566b59f39d1bcf.gif)](https://www.dicoding.com/academies/159/tutorials/16762#)
+![](https://d17ivq9b7rppb3.cloudfront.net/original/academy/2021042521184504cad335f61fb247bf566b59f39d1bcf.gif)
 
 Mari kita mulai!
 
@@ -16,7 +16,7 @@ Mari kita mulai!
     ```
 
     **Notes**: Saat ini Flutter Web belum mendukung hot reload, tetapi hanya hot restart. Jika Anda ingin menggunakan hot reload untuk proses pengembangan yang lebih cepat, kami sarankan menggunakan platform Flutter Desktop yang bisa Anda aktfkan dengan mengikuti langkah Set up pada tautan [berikut](https://flutter.dev/desktop#set-up).
-3. Sekarang jalankan aplikasi Anda. Aplikasi Akan berjalan dengan baik di browser, tetapi kita akan menemui masalah dalam aspek ukuran, seperti list yang terlalu besar seperti berikut:\
+3. Sekarang jalankan aplikasi Anda. Aplikasi Akan berjalan dengan baik di browser, tetapi kita akan menemui masalah dalam aspek ukuran, seperti list yang terlalu besar seperti \
    [![20210425212011200cee8d5e13cee4349a47afe62b8894.jpeg](https://d17ivq9b7rppb3.cloudfront.net/original/academy/20210425212011200cee8d5e13cee4349a47afe62b8894.jpeg)](https://www.dicoding.com/academies/159/tutorials/16762#)
 4.  Karena kita telah membuat aplikasi mobile lalu ingin membuat versi webnya, maka secara tidak langsung kita telah menerapkan _mobile-first design_. Sekarang kita perlu menentukan pada ukuran berapa _layout mobile_ini sudah tidak sesuai dan perlu diubah tampilannya. Untuk memudahkan, mari kita tampilkan lebar browser atau layar ke dalam teks AppBar.
 

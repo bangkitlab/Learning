@@ -62,20 +62,17 @@ menjadi
 
 Isikan android:label dengan nama aplikasi yang diinginkan. Atau Anda bisa gunakan _library_ [berikut](https://pub.dev/packages/flutter\_launcher\_name) untuk menghasilkan nama aplikasi dari **pubspec.yaml**.
 
-\
-
-
-#### Setting Ikon Aplikasi
+### Setting Ikon Aplikasi
 
 Secara _default_ ikon aplikasi Flutter kita adalah ikon Flutter. Untuk mengubah icon aplikasi dengan mudah, kita akan mengganti gambar <mark style="color:yellow;">`ic_launcher.png`</mark> yang berada pada folder <mark style="color:yellow;">`android/app/src/main/res/`</mark> yang terbagi menjadi berbagai _mipmap_ (ukuran resolusi ikon).
 
 Hal yang pertama kita lakukan adalah membuat ikon aplikasi dengan [Android Asset Studio](https://romannurik.github.io/AndroidAssetStudio/icons-launcher.html).
 
-[![dos:2cc1c2271b0aba82b3a851ea24a2f72420211021140854.jpeg](https://dicoding-web-img.sgp1.cdn.digitaloceanspaces.com/original/academy/dos:2cc1c2271b0aba82b3a851ea24a2f72420211021140854.jpeg)](https://www.dicoding.com/academies/159/tutorials/8571#)
+![](https://dicoding-web-img.sgp1.cdn.digitaloceanspaces.com/original/academy/dos:2cc1c2271b0aba82b3a851ea24a2f72420211021140854.jpeg)
 
 Dengan <mark style="color:yellow;">`Android Asset Studio`</mark>, kita dapat membuat ikon aplikasi dengan mudah dan nantinya akan terbuat dalam berbagai resolusi (_mipmap_). Setelah membuat ikon sesuai dengan keinginan, tekan tombol _download_ yang ada di kanan atas.
 
-[![dos:74f604db01c154e4e48c9f5db588d95820211021140821.jpeg](https://dicoding-web-img.sgp1.cdn.digitaloceanspaces.com/original/academy/dos:74f604db01c154e4e48c9f5db588d95820211021140821.jpeg)](https://www.dicoding.com/academies/159/tutorials/8571#)
+![](https://dicoding-web-img.sgp1.cdn.digitaloceanspaces.com/original/academy/dos:74f604db01c154e4e48c9f5db588d95820211021140821.jpeg)
 
 Setelah mengunduh, _unzip_-lah berkas tersebut dan temukan folder <mark style="color:yellow;">`res/`</mark> di dalamnya. Lalu copy folder <mark style="color:yellow;">res/</mark> ke <mark style="color:yellow;">`android/app/src/main/res/`</mark> untuk mengganti <mark style="color:yellow;">`ic_launcher.png`</mark> pada setiap _mipmap_ dengan ikon aplikasi yang baru. Atau Anda bisa gunakan _library_ [berikut](https://pub.dev/packages/flutter\_launcher\_icons) untuk menghasilkan _icon launcher_ dari **pubspec.yaml**.
 
@@ -95,11 +92,11 @@ Setelah kita mengatur nama dan ikon aplikasi, langkah selanjutnya adalah melakuk
 
 Pada kelas ini kita akan mempelajari bagaimana membuat APK _debug_. Caranya ialah menggunakan terminal pada Android Studio. Tekan tombol **Terminal** yang ada pada pojok kiri bawah.
 
-[![dos:a2426b471743e6307fdce313df22a7de20211021141027.jpeg](https://dicoding-web-img.sgp1.cdn.digitaloceanspaces.com/original/academy/dos:a2426b471743e6307fdce313df22a7de20211021141027.jpeg)](https://www.dicoding.com/academies/159/tutorials/8571#)
+![](https://dicoding-web-img.sgp1.cdn.digitaloceanspaces.com/original/academy/dos:a2426b471743e6307fdce313df22a7de20211021141027.jpeg)
 
 Bila menggunakan Visual Studio Code pilih menu terminal yang ada pada menu kiri atas. Lalu pilih **new terminal**.
 
-[![dos:0b59500b5ac1f489c449459e0f2633e020211021141011.jpeg](https://dicoding-web-img.sgp1.cdn.digitaloceanspaces.com/original/academy/dos:0b59500b5ac1f489c449459e0f2633e020211021141011.jpeg)](https://www.dicoding.com/academies/159/tutorials/8571#)
+![](https://dicoding-web-img.sgp1.cdn.digitaloceanspaces.com/original/academy/dos:0b59500b5ac1f489c449459e0f2633e020211021141011.jpeg)
 
 Jika terminal telah muncul, tuliskan perintah berikut:
 

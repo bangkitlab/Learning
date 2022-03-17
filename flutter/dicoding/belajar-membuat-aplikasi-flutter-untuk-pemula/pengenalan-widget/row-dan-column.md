@@ -68,9 +68,12 @@ Maka akan menghasilkan tampilan seperti berikut:\
 
 ### **Kesimpulan**
 
-Untuk membuat sebuah widget-widget berjajar kita dapat menggunakan widget _Row_ atau _Column_. Sebenarnya penggunaan Row dan Column dapat dipadukan sehingga dapat membuat sebuah layout yang kompleks seperti berikut:[![202006151955516672a62f6d332c620b45752249265c90.png](https://d17ivq9b7rppb3.cloudfront.net/original/academy/202006151955516672a62f6d332c620b45752249265c90.png)](https://www.dicoding.com/academies/159/tutorials/6498#)
+Untuk membuat sebuah widget-widget berjajar kita dapat menggunakan widget _Row_ atau _Column_. Sebenarnya penggunaan Row dan Column dapat dipadukan sehingga dapat membuat sebuah layout yang kompleks seperti berikut:\
 
-[![20200205234120de1d94646ed7fc9d450b0abb543ae326.png](https://d17ivq9b7rppb3.cloudfront.net/original/academy/20200205234120de1d94646ed7fc9d450b0abb543ae326.png)](https://www.dicoding.com/academies/159/tutorials/6498#)
+
+![](https://d17ivq9b7rppb3.cloudfront.net/original/academy/202006151955516672a62f6d332c620b45752249265c90.png)
+
+![](https://d17ivq9b7rppb3.cloudfront.net/original/academy/20200205234120de1d94646ed7fc9d450b0abb543ae326.png)
 
 Untuk memahami Row, Column, dan bagaimana menyusun layout dengan Flutter secara mendalam, silakan pelajari dokumentasi berikut:
 

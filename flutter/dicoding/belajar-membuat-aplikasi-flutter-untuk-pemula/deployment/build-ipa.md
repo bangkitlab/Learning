@@ -21,11 +21,11 @@ Atau Anda bisa gunakan library [berikut](https://pub.dev/packages/flutter\_launc
 
 Sama seperti perangkat Android, layar untuk perangkat iPhone juga terbagi ke dalam berbagai ukuran. Sehingga diperlukan juga ukuran ikon yang berbeda. Untuk membuat berbagai ukuran ikon untuk iOS, Anda dapat memanfaatkan website seperti [https://appicon.co/](https://appicon.co) atau yang lainnya. Website ini juga bisa digunakan untuk membuat ikon aplikasi Android. Perlu Anda perhatikan bahwa untuk icon pada iOS Anda tidak dapat membuatnya transparant. Alih-alih, Anda harus membuat icon tersebut penuh dengan warna&#x20;
 
-[![20200615175755d214ec5285ddf91c7ed4c8c2d794c17e.jpeg](https://d17ivq9b7rppb3.cloudfront.net/original/academy/20200615175755d214ec5285ddf91c7ed4c8c2d794c17e.jpeg)](https://www.dicoding.com/academies/159/tutorials/8575#)
+![](https://d17ivq9b7rppb3.cloudfront.net/original/academy/20200615175755d214ec5285ddf91c7ed4c8c2d794c17e.jpeg)
 
-Ketika Anda klik **Generate**, browser akan mengunduh berkas yang Anda butuhkan. Ikon untuk aplikasi iOS bisa Anda dapatkan pada folder **Assets.xcassets**.\
-[![LU9\_iLjbu4Fa3rUc7WQdj9VlgisQorwF5DslXuJbKU2fHDJWE3O6HcUh0VDmberZQqbRItq4kS3N6FF5Ejqj3LkFS5EujfYHMYIuNY\_F0OIjXU0SYfxv7ShYlBf3BPBK7QPIztJJ](https://lh4.googleusercontent.com/LU9\_iLjbu4Fa3rUc7WQdj9VlgisQorwF5DslXuJbKU2fHDJWE3O6HcUh0VDmberZQqbRItq4kS3N6FF5Ejqj3LkFS5EujfYHMYIuNY\_F0OIjXU0SYfxv7ShYlBf3BPBK7QPIztJJ)](https://www.dicoding.com/academies/159/tutorials/8575#)\
+Ketika Anda klik **Generate**, browser akan mengunduh berkas yang Anda butuhkan. Ikon untuk aplikasi iOS bisa Anda dapatkan pada folder **Assets.xcassets**.
 
+![](https://lh4.googleusercontent.com/LU9\_iLjbu4Fa3rUc7WQdj9VlgisQorwF5DslXuJbKU2fHDJWE3O6HcUh0VDmberZQqbRItq4kS3N6FF5Ejqj3LkFS5EujfYHMYIuNY\_F0OIjXU0SYfxv7ShYlBf3BPBK7QPIztJJ)
 
 Selanjutnya Anda dapat mengganti folder **Assets.xcassets** yang ada pada direktori **/ios/Runner/** dengan hasil ikon yang sudah Anda _generate_. Atau Anda bisa menggunakan _library_ [berikut](https://pub.dev/packages/flutter\_launcher\_icons) untuk men-_generate_ ikon aplikasi melalui **pubspec.yaml**
 

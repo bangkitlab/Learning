@@ -2,7 +2,7 @@
 
 Kita telah berkenalan, menginstal, dan belajar fundamental Flutter. Itu _entrée_ alias hidangan pembukanya. Nah, sekarang kita akan menyibak ke _plat du jour_ alias menu utamanya. Apa inti dari Flutter? Yap, _**widget**_ jawabnya! Sebagian besar yang ada pada Flutter adalah widget. Jadi, relevan jika kita bilang bahwa “Flutter is all about widget.” Text sendiri adalah widget. Button juga widget. Selain itu widget juga dapat dibangun dari kumpulan beberapa widget. Lantas mengapa widget begitu penting dalam flutter? Penasaran? Mari kita bahas!
 
-## World of components
+### World of components
 
 Perlu kita ketahui bahwa konsep Widget pada Flutter itu terinspirasi oleh salah framework JavaScript yang digunakan untuk membangun sebuah website yaitu ReactJS. ReactJS memiliki konsep Component. Mari kita analogikan dengan mainan lego! Di lego terdapat _block-block_ kecil yang nantinya kita susun untuk membangun sebuah istana lego. Berarti _component_ dalam _programming_ adalah sekumpulan _block-block code_ yang digunakan untuk membangun sebuah aplikasi.
 
