@@ -65,18 +65,34 @@ Setelah persyaratan minimum terpenuhi, Anda dapat mulai melakukan instalasi Flut
 
 {% tabs %}
 {% tab title="Windows" %}
-
-
 1. Unduh paket instalasi untuk mendapatkan versi stabil terbaru dari Flutter SDK di alamat web [https://flutter.dev/docs/development/tools/sdk/releases](https://flutter.dev/docs/development/tools/sdk/releases). Ambil versi terbaru pada stable channel sesuai sistem operasi yang digunakan.
 2. Ekstrak berkas zip dan tempatkan folder flutter pada lokasi instalasi yang diinginkan untuk Flutter SDK. Misalnya C:\Development, jangan pasang Flutter di direktori seperti C:\Program Files atau yang membutuhkan hak istimewa seperti administrator.
 3.  Temukan berkas flutter\_console.bat di dalam direktori flutter tersebut. Mulai dengan klik dua kali atau jalankan script tersebut dan Anda sekarang siap untuk menjalankan perintah Flutter di Flutter Console.
 
     ![](https://d17ivq9b7rppb3.cloudfront.net/original/academy/202006101131070f740c0b99f5711865b603c906e79bc8.jpeg)
-4. Tampilan dari flutter\_console.bat seperti di bawah ini:\
-   [![2020061011314434d70709c2e6fee6cd9e72ec51c11122.jpeg](https://d17ivq9b7rppb3.cloudfront.net/original/academy/2020061011314434d70709c2e6fee6cd9e72ec51c11122.jpeg)](https://www.dicoding.com/academies/159/tutorials/6446#)
+4. Tampilan dari flutter\_console.bat seperti di bawah in
 {% endtab %}
 
-{% tab title="Second Tab" %}
+{% tab title="MacOS" %}
+1. Unduh paket instalasi untuk mendapatkan versi stabil terbaru dari Flutter SDK di alamat web [https://flutter.dev/docs/development/tools/sdk/releases](https://flutter.dev/docs/development/tools/sdk/releases), ambil versi terbaru pada stable channel sesuai sistem operasi yang digunakan.
+2. Ekstrak berkas zip tersebut dan tempatkan folder flutter pada lokasi instalasi yang diinginkan untuk Flutter SDK. Misalnya \~/development.
+3.  Tambahkan Flutter Tools pada PATH Anda.
+
+    ```
+    export PATH="$PATH:~/development/flutter/bin"
+    ```
+{% endtab %}
+
+{% tab title="Linux" %}
+1. Unduh paket instalasi untuk mendapatkan versi stabil terbaru dari Flutter SDK di alamat web [https://flutter.dev/docs/development/tools/sdk/releases](https://flutter.dev/docs/development/tools/sdk/releases), ambil versi terbaru pada stable channel sesuai sistem operasi yang digunakan.
+2. Ekstrak berkas zip tersebut dan tempatkan folder flutter pada lokasi instalasi yang diinginkan untuk Flutter SDK. Misalnya \~/development.
+3.  Tambahkan Flutter Tools pada PATH Anda
+
+    ```
+    export PATH="$PATH:~/development/flutter/bin"
+    ```
+
+\
 
 {% endtab %}
 {% endtabs %}
