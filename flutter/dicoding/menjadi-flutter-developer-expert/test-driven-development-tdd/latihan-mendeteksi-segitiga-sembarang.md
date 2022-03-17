@@ -1,0 +1,2 @@
+# Latihan : Mendeteksi Segitiga Sembarang
+

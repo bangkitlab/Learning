@@ -1,0 +1,2 @@
+# Latihan : Aplikasi Segitiga
+
