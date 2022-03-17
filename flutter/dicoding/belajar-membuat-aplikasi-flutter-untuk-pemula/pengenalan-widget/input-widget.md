@@ -63,102 +63,104 @@ Untuk membuat TextField seperti di atas, Anda bisa menggunakan kode seperti beri
 {% tabs %}
 {% tab title="onChanged" %}
 ```
-// Some code
+class _FirstScreenState extends State<FirstScreen> {
+  String _name = '';
+ 
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('First Screen'),
+      ),
+      body: Padding(
+        padding: const EdgeInsets.all(16.0),
+        child: Column(
+          children: [
+            TextField(
+              decoration: InputDecoration(
+                hintText: 'Write your name here...',
+                labelText: 'Your Name',
+              ),
+              onChanged: (String value) {
+                setState(() {
+                  _name = value;
+                });
+              },
+            ),
+            SizedBox(height: 20),
+            ElevatedButton(
+              onPressed: () {
+                showDialog(
+                    context: context,
+                    builder: (context) {
+                      return AlertDialog(
+                        content: Text('Hello, $_name'),
+                      );
+                    });
+              },
+              child: Text('Submit'),
+            )
+          ],
+        ),
+      ),
+    );
+  }
+}
 ```
-
-1. class \_FirstScreenState extends State\<FirstScreen> {
-2. &#x20; String \_name = '';
-3. &#x20;
-4. &#x20; @override
-5. &#x20; Widget build(BuildContext context) {
-6. &#x20;   return Scaffold(
-7. &#x20;     appBar: AppBar(
-8. &#x20;       title: Text('First Screen'),
-9. &#x20;     ),
-10. &#x20;     body: Padding(
-11. &#x20;       padding: const EdgeInsets.all(16.0),
-12. &#x20;       child: Column(
-13. &#x20;         children: \[
-14. &#x20;           TextField(
-15. &#x20;             decoration: InputDecoration(
-16. &#x20;               hintText: 'Write your name here...',
-17. &#x20;               labelText: 'Your Name',
-18. &#x20;             ),
-19. &#x20;             onChanged: (String value) {
-20. &#x20;               setState(() {
-21. &#x20;                 \_name = value;
-22. &#x20;               });
-23. &#x20;             },
-24. &#x20;           ),
-25. &#x20;           SizedBox(height: 20),
-26. &#x20;           ElevatedButton(
-27. &#x20;             onPressed: () {
-28. &#x20;               showDialog(
-29. &#x20;                   context: context,
-30. &#x20;                   builder: (context) {
-31. &#x20;                     return AlertDialog(
-32. &#x20;                       content: Text('Hello, $\_name'),
-33. &#x20;                     );
-34. &#x20;                   });
-35. &#x20;             },
-36. &#x20;             child: Text('Submit'),
-37. &#x20;           )
-38. &#x20;         ],
-39. &#x20;       ),
-40. &#x20;     ),
-41. &#x20;   );
-42. &#x20; }
-43. }
 {% endtab %}
 
 {% tab title="controller" %}
+```
+class _FirstScreenState extends State<FirstScreen> {
+  TextEditingController _controller = TextEditingController();
+ 
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('First Screen'),
+      ),
+      body: Padding(
+        padding: const EdgeInsets.all(16.0),
+        child: Column(
+          children: [
+            TextField(
+              controller: _controller,
+              decoration: InputDecoration(
+                hintText: 'Write your name here...',
+                labelText: 'Your Name',
+              ),
+            ),
+            SizedBox(height: 20),
+            ElevatedButton(
+              onPressed: () {
+                showDialog(
+                    context: context,
+                    builder: (context) {
+                      return AlertDialog(
+                        content: Text('Hello, ${_controller.text}'),
+                      );
+                    });
+              },
+              child: Text('Submit'),
+            )
+          ],
+        ),
+      ),
+    );
+  }
+ 
+  @override
+  void dispose() {
+    _controller.dispose();
+    super.dispose();
+  }
+}
 
+```
 
-1. class \_FirstScreenState extends State\<FirstScreen> {
-2. &#x20; TextEditingController \_controller = TextEditingController();
-3. &#x20;
-4. &#x20; @override
-5. &#x20; Widget build(BuildContext context) {
-6. &#x20;   return Scaffold(
-7. &#x20;     appBar: AppBar(
-8. &#x20;       title: Text('First Screen'),
-9. &#x20;     ),
-10. &#x20;     body: Padding(
-11. &#x20;       padding: const EdgeInsets.all(16.0),
-12. &#x20;       child: Column(
-13. &#x20;         children: \[
-14. &#x20;           TextField(
-15. &#x20;             controller: \_controller,
-16. &#x20;             decoration: InputDecoration(
-17. &#x20;               hintText: 'Write your name here...',
-18. &#x20;               labelText: 'Your Name',
-19. &#x20;             ),
-20. &#x20;           ),
-21. &#x20;           SizedBox(height: 20),
-22. &#x20;           ElevatedButton(
-23. &#x20;             onPressed: () {
-24. &#x20;               showDialog(
-25. &#x20;                   context: context,
-26. &#x20;                   builder: (context) {
-27. &#x20;                     return AlertDialog(
-28. &#x20;                       content: Text('Hello, ${\_controller.text}'),
-29. &#x20;                     );
-30. &#x20;                   });
-31. &#x20;             },
-32. &#x20;             child: Text('Submit'),
-33. &#x20;           )
-34. &#x20;         ],
-35. &#x20;       ),
-36. &#x20;     ),
-37. &#x20;   );
-38. &#x20; }
-39. &#x20;
-40. &#x20; @override
-41. &#x20; void dispose() {
-42. &#x20;   \_controller.dispose();
-43. &#x20;   super.dispose();
-44. &#x20; }
-45. }
+\
+
 {% endtab %}
 {% endtabs %}
 
