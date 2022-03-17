@@ -1,0 +1,7 @@
+# 📖 Framework Flutter
+
+Teknologi sudah menjadi bagian tak terpisahkan dalam hidup kita terutama _smartphone_. Menurut data dari _We Are Social_, pada bulan Januari 2020 pengguna internet di Indonesia mencapai sekitar 175,4 juta orang. Terdapat peningkatan sebesar 17% atau sekitar 25 juta pengguna dari tahun 2019. Jika dilihat dari total populasi penduduk Indonesia yang berkisar 272,1 juta jiwa, maka 64% di antaranya sudah mengakses internet. Dengan masifnya angka pengguna _smartphone_ ini, kian spesifik pula _requirements_ alias permintaan bagi seorang pengembang aplikasi. Termasuk _requirement_ pada perangkat _mobile_ dengan target platform Android dan iOS. Masing-masing platform memiliki aplikasi _native_-nya tersendiri.
+
+Mengembangkan dua platform memiliki banyak implikasi. Ditinjau dari sisi bisnis, biaya yang perlu dikeluarkan tentunya tidak murah. Dua aplikasi berarti ada dua tipe developer yang perlu direkrut dan dua jenis pengembangan untuk dikelola. Jika ada teknologi yang memungkinkan pengembangan aplikasi di beberapa platform sekaligus hanya dengan satu codebase tentunya lebih hemat bukan? Pasti lebih efisien dari sisi biaya, waktu, dan tenaga.
+
+Tertarik untuk mempelajari _stack_ teknologi yang bisa mewujudkannya? Mari kita berkenalan dengan Flutter. Inilah _framework_ populer dan powerful buatan Google, Flutter hadir untuk mengembangkan aplikasi multi-platform yang dikompilasi secara _native_.&#x20;
