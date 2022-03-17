@@ -173,7 +173,7 @@
       * [🧪 Latihan : Dependency Injection dengan get\_it](flutter/dicoding/menjadi-flutter-developer-expert/clean-architecture/latihan-dependency-injection-dengan-get\_it.md)
       * [📖 Rangkuman Clean Architecture](flutter/dicoding/menjadi-flutter-developer-expert/clean-architecture/rangkuman-clean-architecture.md)
     * [📗 Test-Driven Development (TDD)](flutter/dicoding/menjadi-flutter-developer-expert/test-driven-development-tdd/README.md)
-      * [Pentingnya Pengujian pada Pengembangan Aplikasi](flutter/dicoding/menjadi-flutter-developer-expert/test-driven-development-tdd/pentingnya-pengujian-pada-pengembangan-aplikasi.md)
+      * [📖 Pentingnya Pengujian pada Pengembangan Aplikasi](flutter/dicoding/menjadi-flutter-developer-expert/test-driven-development-tdd/pentingnya-pengujian-pada-pengembangan-aplikasi.md)
       * [Apa itu TDD](flutter/dicoding/menjadi-flutter-developer-expert/test-driven-development-tdd/apa-itu-tdd.md)
       * [Workflow TDD](flutter/dicoding/menjadi-flutter-developer-expert/test-driven-development-tdd/workflow-tdd.md)
       * [Latihan : Aplikasi Segitiga](flutter/dicoding/menjadi-flutter-developer-expert/test-driven-development-tdd/latihan-aplikasi-segitiga.md)
