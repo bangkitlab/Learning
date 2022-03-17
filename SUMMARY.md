@@ -46,3 +46,4 @@
     * [📖 Responsive Layout](flutter/dicoding/pengenalan-widget/responsive-layout.md)
     * [🧪 Codelab 3: Menampilkan Daftar Tempat Wisata](flutter/dicoding/pengenalan-widget/codelab-3-menampilkan-daftar-tempat-wisata.md)
     * [🧪 Codelab 4: Pengembangan untuk Web](flutter/dicoding/pengenalan-widget/codelab-4-pengembangan-untuk-web.md)
+    * [📖 Rangkuman Materi](flutter/dicoding/pengenalan-widget/rangkuman-materi.md)
