@@ -646,389 +646,389 @@ Selamat! Anda telah menyelesaikan seluruh codelab dan projek Wisata Bandung. Sel
 
 {% tabs %}
 {% tab title="main_screen.dart" %}
-
-
-1. import 'package:flutter/material.dart';
-2. import 'package:wisatabandung/detail\_screen.dart';
-3. import 'package:wisatabandung/model/tourism\_place.dart';
-4. &#x20;
-5. &#x20;
-6. class MainScreen extends StatelessWidget {
-7. &#x20; @override
-8. &#x20; Widget build(BuildContext context) {
-9. &#x20;   return Scaffold(
-10. &#x20;     appBar: AppBar(
-11. &#x20;       title: Text('Wisata Bandung'),
-12. &#x20;     ),
-13. &#x20;     body: ListView.builder(
-14. &#x20;       itemBuilder: (context, index) {
-15. &#x20;         final TourismPlace place = tourismPlaceList\[index];
-16. &#x20;         return InkWell(
-17. &#x20;           onTap: () {
-18. &#x20;             Navigator.push(context, MaterialPageRoute(builder: (context) {
-19. &#x20;               return DetailScreen(place: place);
-20. &#x20;             }));
-21. &#x20;           },
-22. &#x20;           child: Card(
-23. &#x20;             child: Row(
-24. &#x20;               crossAxisAlignment: CrossAxisAlignment.start,
-25. &#x20;               children: \<Widget>\[
-26. &#x20;                 Expanded(
-27. &#x20;                   flex: 1,
-28. &#x20;                   child: Image.asset(place.imageAsset),
-29. &#x20;                 ),
-30. &#x20;                 Expanded(
-31. &#x20;                   flex: 2,
-32. &#x20;                   child: Padding(
-33. &#x20;                     padding: const EdgeInsets.all(8.0),
-34. &#x20;                     child: Column(
-35. &#x20;                       crossAxisAlignment: CrossAxisAlignment.start,
-36. &#x20;                       children: \<Widget>\[
-37. &#x20;                         Text(
-38. &#x20;                           place.name,
-39. &#x20;                           style: TextStyle(fontSize: 16.0),
-40. &#x20;                         ),
-41. &#x20;                         SizedBox(
-42. &#x20;                           height: 10,
-43. &#x20;                         ),
-44. &#x20;                         Text(place.location),
-45. &#x20;                       ],
-46. &#x20;                     ),
-47. &#x20;                   ),
-48. &#x20;                 )
-49. &#x20;               ],
-50. &#x20;             ),
-51. &#x20;           ),
-52. &#x20;         );
-53. &#x20;       },
-54. &#x20;       itemCount: tourismPlaceList.length,
-55. &#x20;     ),
-56. &#x20;   );
-57. &#x20; }
-58. }
+```
+import 'package:flutter/material.dart';
+import 'package:wisatabandung/detail_screen.dart';
+import 'package:wisatabandung/model/tourism_place.dart';
+ 
+ 
+class MainScreen extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Wisata Bandung'),
+      ),
+      body: ListView.builder(
+        itemBuilder: (context, index) {
+          final TourismPlace place = tourismPlaceList[index];
+          return InkWell(
+            onTap: () {
+              Navigator.push(context, MaterialPageRoute(builder: (context) {
+                return DetailScreen(place: place);
+              }));
+            },
+            child: Card(
+              child: Row(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: <Widget>[
+                  Expanded(
+                    flex: 1,
+                    child: Image.asset(place.imageAsset),
+                  ),
+                  Expanded(
+                    flex: 2,
+                    child: Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: <Widget>[
+                          Text(
+                            place.name,
+                            style: TextStyle(fontSize: 16.0),
+                          ),
+                          SizedBox(
+                            height: 10,
+                          ),
+                          Text(place.location),
+                        ],
+                      ),
+                    ),
+                  )
+                ],
+              ),
+            ),
+          );
+        },
+        itemCount: tourismPlaceList.length,
+      ),
+    );
+  }
+}
+```
 {% endtab %}
 
 {% tab title="detail_screen.dart" %}
-
-
-1. import 'package:flutter/material.dart';
-2. import 'package:flutter/widgets.dart';
-3. import 'package:wisatabandung/model/tourism\_place.dart';
-4. &#x20;
-5. var informationTextStyle = TextStyle(fontFamily: 'Oxygen');
-6. &#x20;
-7. class DetailScreen extends StatelessWidget {
-8. &#x20; final TourismPlace place;
-9. &#x20;
-10. &#x20; DetailScreen({required this.place});
-11. &#x20;
-12. &#x20; @override
-13. &#x20; Widget build(BuildContext context) {
-14. &#x20;   return Scaffold(
-15. &#x20;     body: SingleChildScrollView(
-16. &#x20;       child: Column(
-17. &#x20;         crossAxisAlignment: CrossAxisAlignment.stretch,
-18. &#x20;         children: \<Widget>\[
-19. &#x20;           Stack(
-20. &#x20;             children: \<Widget>\[
-21. &#x20;               Image.asset(place.imageAsset),
-22. &#x20;               SafeArea(
-23. &#x20;                 child: Padding(
-24. &#x20;                   padding: const EdgeInsets.all(8.0),
-25. &#x20;                   child: Row(
-26. &#x20;                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
-27. &#x20;                     children: \[
-28. &#x20;                       CircleAvatar(
-29. &#x20;                         backgroundColor: Colors.grey,
-30. &#x20;                         child: IconButton(
-31. &#x20;                           icon: Icon(
-32. &#x20;                             Icons.arrow\_back,
-33. &#x20;                             color: Colors.white,
-34. &#x20;                           ),
-35. &#x20;                           onPressed: () {
-36. &#x20;                             Navigator.pop(context);
-37. &#x20;                           },
-38. &#x20;                         ),
-39. &#x20;                       ),
-40. &#x20;                       FavoriteButton(),
-41. &#x20;                     ],
-42. &#x20;                   ),
-43. &#x20;                 ),
-44. &#x20;               ),
-45. &#x20;             ],
-46. &#x20;           ),
-47. &#x20;           Container(
-48. &#x20;             margin: EdgeInsets.only(top: 16.0),
-49. &#x20;             child: Text(
-50. &#x20;               place.name,
-51. &#x20;               textAlign: TextAlign.center,
-52. &#x20;               style: TextStyle(
-53. &#x20;                 fontSize: 30.0,
-54. &#x20;                 fontFamily: 'Staatliches',
-55. &#x20;               ),
-56. &#x20;             ),
-57. &#x20;           ),
-58. &#x20;           Container(
-59. &#x20;             margin: EdgeInsets.symmetric(vertical: 16.0),
-60. &#x20;             child: Row(
-61. &#x20;               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-62. &#x20;               children: \<Widget>\[
-63. &#x20;                 Column(
-64. &#x20;                   children: \<Widget>\[
-65. &#x20;                     Icon(Icons.calendar\_today),
-66. &#x20;                     SizedBox(height: 8.0),
-67. &#x20;                     Text(
-68. &#x20;                       place.openDays,
-69. &#x20;                       style: informationTextStyle,
-70. &#x20;                     ),
-71. &#x20;                   ],
-72. &#x20;                 ),
-73. &#x20;                 Column(
-74. &#x20;                   children: \<Widget>\[
-75. &#x20;                     Icon(Icons.access\_time),
-76. &#x20;                     SizedBox(height: 8.0),
-77. &#x20;                     Text(
-78. &#x20;                       place.openTime,
-79. &#x20;                       style: informationTextStyle,
-80. &#x20;                     ),
-81. &#x20;                   ],
-82. &#x20;                 ),
-83. &#x20;                 Column(
-84. &#x20;                   children: \<Widget>\[
-85. &#x20;                     Icon(Icons.monetization\_on),
-86. &#x20;                     SizedBox(height: 8.0),
-87. &#x20;                     Text(
-88. &#x20;                       place.ticketPrice,
-89. &#x20;                       style: informationTextStyle,
-90. &#x20;                     ),
-91. &#x20;                   ],
-92. &#x20;                 ),
-93. &#x20;               ],
-94. &#x20;             ),
-95. &#x20;           ),
-96. &#x20;           Container(
-97. &#x20;             padding: EdgeInsets.all(16.0),
-98. &#x20;             child: Text(
-99. &#x20;               place.description,
-100. &#x20;               textAlign: TextAlign.center,
-101. &#x20;               style: TextStyle(
-102. &#x20;                 fontSize: 16.0,
-103. &#x20;                 fontFamily: 'Oxygen',
-104. &#x20;               ),
-105. &#x20;             ),
-106. &#x20;           ),
-107. &#x20;           Container(
-108. &#x20;             height: 150,
-109. &#x20;             child: ListView(
-110. &#x20;               scrollDirection: Axis.horizontal,
-111. &#x20;               children: place.imageUrls.map((url) {
-112. &#x20;                 return Padding(
-113. &#x20;                   padding: const EdgeInsets.all(4.0),
-114. &#x20;                   child: ClipRRect(
-115. &#x20;                     borderRadius: BorderRadius.circular(10),
-116. &#x20;                     child: Image.network(url),
-117. &#x20;                   ),
-118. &#x20;                 );
-119. &#x20;               }).toList(),
-120. &#x20;             ),
-121. &#x20;           ),
-122. &#x20;         ],
-123. &#x20;       ),
-124. &#x20;     ),
-125. &#x20;   );
-126. &#x20; }
-127. }
-128. &#x20;
-129. &#x20;
-130. class FavoriteButton extends StatefulWidget {
-131. &#x20; @override
-132. &#x20; \_FavoriteButtonState createState() => \_FavoriteButtonState();
-133. }
-134. &#x20;
-135. &#x20;
-136. class \_FavoriteButtonState extends State\<FavoriteButton> {
-137. &#x20; bool isFavorite = false;
-138. &#x20;
-139. &#x20;
-140. &#x20; @override
-141. &#x20; Widget build(BuildContext context) {
-142. &#x20;   return IconButton(
-143. &#x20;     icon: Icon(
-144. &#x20;       isFavorite ? Icons.favorite : Icons.favorite\_border,
-145. &#x20;       color: Colors.red,
-146. &#x20;     ),
-147. &#x20;     onPressed: () {
-148. &#x20;       setState(() {
-149. &#x20;         isFavorite = !isFavorite;
-150. &#x20;       });
-151. &#x20;     },
-152. &#x20;   );
-153. &#x20; }
-154. }
+```
+import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
+import 'package:wisatabandung/model/tourism_place.dart';
+ 
+var informationTextStyle = TextStyle(fontFamily: 'Oxygen');
+ 
+class DetailScreen extends StatelessWidget {
+  final TourismPlace place;
+ 
+  DetailScreen({required this.place});
+ 
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: SingleChildScrollView(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: <Widget>[
+            Stack(
+              children: <Widget>[
+                Image.asset(place.imageAsset),
+                SafeArea(
+                  child: Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        CircleAvatar(
+                          backgroundColor: Colors.grey,
+                          child: IconButton(
+                            icon: Icon(
+                              Icons.arrow_back,
+                              color: Colors.white,
+                            ),
+                            onPressed: () {
+                              Navigator.pop(context);
+                            },
+                          ),
+                        ),
+                        FavoriteButton(),
+                      ],
+                    ),
+                  ),
+                ),
+              ],
+            ),
+            Container(
+              margin: EdgeInsets.only(top: 16.0),
+              child: Text(
+                place.name,
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                  fontSize: 30.0,
+                  fontFamily: 'Staatliches',
+                ),
+              ),
+            ),
+            Container(
+              margin: EdgeInsets.symmetric(vertical: 16.0),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: <Widget>[
+                  Column(
+                    children: <Widget>[
+                      Icon(Icons.calendar_today),
+                      SizedBox(height: 8.0),
+                      Text(
+                        place.openDays,
+                        style: informationTextStyle,
+                      ),
+                    ],
+                  ),
+                  Column(
+                    children: <Widget>[
+                      Icon(Icons.access_time),
+                      SizedBox(height: 8.0),
+                      Text(
+                        place.openTime,
+                        style: informationTextStyle,
+                      ),
+                    ],
+                  ),
+                  Column(
+                    children: <Widget>[
+                      Icon(Icons.monetization_on),
+                      SizedBox(height: 8.0),
+                      Text(
+                        place.ticketPrice,
+                        style: informationTextStyle,
+                      ),
+                    ],
+                  ),
+                ],
+              ),
+            ),
+            Container(
+              padding: EdgeInsets.all(16.0),
+              child: Text(
+                place.description,
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                  fontSize: 16.0,
+                  fontFamily: 'Oxygen',
+                ),
+              ),
+            ),
+            Container(
+              height: 150,
+              child: ListView(
+                scrollDirection: Axis.horizontal,
+                children: place.imageUrls.map((url) {
+                  return Padding(
+                    padding: const EdgeInsets.all(4.0),
+                    child: ClipRRect(
+                      borderRadius: BorderRadius.circular(10),
+                      child: Image.network(url),
+                    ),
+                  );
+                }).toList(),
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
+ 
+ 
+class FavoriteButton extends StatefulWidget {
+  @override
+  _FavoriteButtonState createState() => _FavoriteButtonState();
+}
+ 
+ 
+class _FavoriteButtonState extends State<FavoriteButton> {
+  bool isFavorite = false;
+ 
+ 
+  @override
+  Widget build(BuildContext context) {
+    return IconButton(
+      icon: Icon(
+        isFavorite ? Icons.favorite : Icons.favorite_border,
+        color: Colors.red,
+      ),
+      onPressed: () {
+        setState(() {
+          isFavorite = !isFavorite;
+        });
+      },
+    );
+  }
+}
+```
 {% endtab %}
 
 {% tab title="tourism_place.dart" %}
-
-
-1. class TourismPlace {
-2. &#x20; String name;
-3. &#x20; String location;
-4. &#x20; String description;
-5. &#x20; String openDays;
-6. &#x20; String openTime;
-7. &#x20; String ticketPrice;
-8. &#x20; String imageAsset;
-9. &#x20; List\<String> imageUrls;
-10. &#x20;
-11. &#x20; TourismPlace({
-12. &#x20;   required this.name,
-13. &#x20;   required this.location,
-14. &#x20;   required this.description,
-15. &#x20;   required this.openDays,
-16. &#x20;   required this.openTime,
-17. &#x20;   required this.ticketPrice,
-18. &#x20;   required this.imageAsset,
-19. &#x20;   required this.imageUrls,
-20. &#x20; });
-21. }
-22. &#x20;
-23. var tourismPlaceList = \[
-24. &#x20; TourismPlace(
-25. &#x20;   name: 'Farm House Lembang',
-26. &#x20;   location: 'Lembang',
-27. &#x20;   description:
-28. &#x20;       'Berada di jalur utama Bandung-Lembang, Farm House menjadi objek wisata yang tidak pernah sepi pengunjung. Selain karena letaknya strategis, kawasan ini juga menghadirkan nuansa wisata khas Eropa. Semua itu diterapkan dalam bentuk spot swafoto Instagramable.',
-29. &#x20;   openDays: 'Open Everyday',
-30. &#x20;   openTime: '09:00 - 20:00',
-31. &#x20;   ticketPrice: 'Rp 25000',
-32. &#x20;   imageAsset: 'images/farm-house.jpg',
-33. &#x20;   imageUrls: \[
-34. &#x20;     'https://media-cdn.tripadvisor.com/media/photo-s/0d/7c/59/70/farmhouse-lembang.jpg',
-35. &#x20;     'https://media-cdn.tripadvisor.com/media/photo-w/13/f0/22/f6/photo3jpg.jpg',
-36. &#x20;     'https://media-cdn.tripadvisor.com/media/photo-m/1280/16/a9/33/43/liburan-di-farmhouse.jpg'
-37. &#x20;   ],
-38. &#x20; ),
-39. &#x20; TourismPlace(
-40. &#x20;   name: 'Observatorium Bosscha',
-41. &#x20;   location: 'Lembang',
-42. &#x20;   description:
-43. &#x20;       'Memiliki beberapa teleskop, antara lain, Refraktor Ganda Zeiss, Schmidt Bimasakti, Refraktor Bamberg, Cassegrain GOTO, dan Teleskop Surya. Refraktor Ganda Zeiss adalah jenis teleskop terbesar untuk meneropong bintang. Benda ini diletakkan pada atap kubah sehingga saat teropong digunakan, atap tersebut harus dibuka. Observatorium Bosscha boleh dikunjungi oleh siapa pun, tanpa tiket. Namun, bagi yang ingin menggunakan teleskop Zeiss, wajib mendaftarkan diri. Untuk instansi atau lembaga pendidikan, diberikan jadwal hari Selasa sampai Jumat. Sementara itu, kunjungan individu dibuka setiap hari Sabtu.',
-44. &#x20;   openDays: 'Open Tuesday - Saturday',
-45. &#x20;   openTime: '09:00 - 14:30',
-46. &#x20;   ticketPrice: 'Rp 20000',
-47. &#x20;   imageAsset: 'images/bosscha.jpg',
-48. &#x20;   imageUrls: \[
-49. &#x20;     'https://media-cdn.tripadvisor.com/media/photo-o/12/6b/63/0b/bosscha-observatory.jpg',
-50. &#x20;     'https://media-cdn.tripadvisor.com/media/photo-p/0d/6a/88/9b/photo3jpg.jpg',
-51. &#x20;     'https://media-cdn.tripadvisor.com/media/photo-o/11/3f/04/39/p-20171111-110220-largejpg.jpg',
-52. &#x20;   ],
-53. &#x20; ),
-54. &#x20; TourismPlace(
-55. &#x20;   name: 'Jalan Asia Afrika',
-56. &#x20;   location: 'Kota Bandung',
-57. &#x20;   description:
-58. &#x20;       'Jalan Asia Afrika di Bandung memiliki kaitan yang sangat erat dengan pendirian kota Kembang ini. Karena pada saat itu, Gubernur Jenderal Herman Willem Deaendels dari Belanda menancapkan tongkatnya saat memerintahkan pendirian kota ini, yang kemudian diabadikan menjadi tugu Bandung Nol Kilometer.',
-59. &#x20;   openDays: 'Open Everyday',
-60. &#x20;   openTime: '24 hours',
-61. &#x20;   ticketPrice: 'Free',
-62. &#x20;   imageAsset: 'images/jalan-asia-afrika.jpg',
-63. &#x20;   imageUrls: \[
-64. &#x20;     'https://media-cdn.tripadvisor.com/media/photo-o/0d/c2/e7/e6/quotes-kota-bandung.jpg',
-65. &#x20;     'https://media-cdn.tripadvisor.com/media/photo-w/17/f4/44/01/jalan-asia-afrika.jpg',
-66. &#x20;     'https://media-cdn.tripadvisor.com/media/photo-s/0a/ef/36/e2/jalan-asia-afrika.jpg',
-67. &#x20;   ],
-68. &#x20; ),
-69. &#x20; TourismPlace(
-70. &#x20;   name: 'Stone Garden',
-71. &#x20;   location: 'Padalarang',
-72. &#x20;   description:
-73. &#x20;       'Stone Garden atau Taman Batu di Padalarang – Bandung ini adalah nama secara harafiah untuk apa yang akan kita lihat jika berada di sana. Hamparan batu yang artistik membuat kita merasa tidak sedang berada di Bandung, apalagi di Padalarang. Hamparan batu yang dimaksud bukan terhampar begitu saja di atas tanah luas yang menjadi permukaannya. Batu-batu besar yang ukuran pastinya bervariasi tersusun seperti memiliki suatu formasi matematis.',
-74. &#x20;   openDays: 'Open Everyday',
-75. &#x20;   openTime: '06:00 - 17:00',
-76. &#x20;   ticketPrice: 'Rp 3000',
-77. &#x20;   imageAsset: 'images/stone-garden.jpg',
-78. &#x20;   imageUrls: \[
-79. &#x20;     'https://media-cdn.tripadvisor.com/media/photo-o/15/01/d7/4b/p-20180510-153310-01.jpg',
-80. &#x20;     'https://media-cdn.tripadvisor.com/media/photo-w/15/68/00/32/stone-garden-citatah.jpg',
-81. &#x20;     'https://media-cdn.tripadvisor.com/media/photo-o/0d/a2/cb/05/stone-garden-citatah.jpg',
-82. &#x20;   ],
-83. &#x20; ),
-84. &#x20; TourismPlace(
-85. &#x20;   name: 'Taman Film Pasopati',
-86. &#x20;   location: 'Kota Bandung',
-87. &#x20;   description:
-88. &#x20;       'Menjadi salah satu tempat wisata di Bandung yang favorit, tentu Taman Film ini memiliki fasilitas cukup memadai. Pemberian fasilitas ini memiliki harapan para pengunjung akan merasa nyaman dan tak segan2 untuk kembali berkunjung terus menerus kesini. Beberapa fasilitas taman yang bisa kamu nikmati diantaranya seperti layar videotron besar berukuran 4×8 untuk memutar berbagai macam pilihan film seperti Film Indonesia, Bollywood, Korea, ataupun Indie Bandung.',
-89. &#x20;   openDays: 'Open Everyday',
-90. &#x20;   openTime: '24 hours',
-91. &#x20;   ticketPrice: 'Free',
-92. &#x20;   imageAsset: 'images/taman-film.jpg',
-93. &#x20;   imageUrls: \[
-94. &#x20;     'https://media-cdn.tripadvisor.com/media/photo-o/08/8b/87/50/bandung-movie-park.jpg',
-95. &#x20;     'https://media-cdn.tripadvisor.com/media/photo-o/17/67/d5/53/img-20190505-114509-largejpg.jpg',
-96. &#x20;     'https://media-cdn.tripadvisor.com/media/photo-w/09/73/33/05/taman-film-pasopati.jpg',
-97. &#x20;   ],
-98. &#x20; ),
-99. &#x20; TourismPlace(
-100. &#x20;   name: 'Museum Geologi',
-101. &#x20;   location: 'Kota Bandung',
-102. &#x20;   description:
-103. &#x20;       'Museum Geologi didirikan pada tanggal 16 Mei 1929. Museum ini telah direnovasi dengan dana bantuan dari JICA (Japan International Cooperation Agency). Setelah mengalami renovasi, Museum Geologi dibuka kembali dan diresmikan oleh Wakil Presiden RI, Megawati Soekarnoputri pada tanggal 23 Agustus 2000. Sebagai salah satu monumen bersejarah, museum berada di bawah perlindungan pemerintah dan merupakan peninggalan nasional. Dalam Museum ini, tersimpan dan dikelola materi-materi geologi yang berlimpah, seperti fosil, batuan, mineral. Kesemuanya itu dikumpulkan selama kerja lapangan di Indonesia sejak 1850.',
-104. &#x20;   openDays: 'Open Saturday - Thursday',
-105. &#x20;   openTime: '09:00 - 15:30',
-106. &#x20;   ticketPrice: 'Rp 3000',
-107. &#x20;   imageAsset: 'images/museum-geologi.jpg',
-108. &#x20;   imageUrls: \[
-109. &#x20;     'https://media-cdn.tripadvisor.com/media/photo-w/19/1c/8e/f7/geology-museum.jpg',
-110. &#x20;     'https://media-cdn.tripadvisor.com/media/photo-o/11/a7/35/b7/geology-museum.jpg',
-111. &#x20;     'https://media-cdn.tripadvisor.com/media/photo-s/1a/55/e0/dc/geology-museum.jpg',
-112. &#x20;   ],
-113. &#x20; ),
-114. &#x20; TourismPlace(
-115. &#x20;   name: 'Floating Market',
-116. &#x20;   location: 'Lembang',
-117. &#x20;   description:
-118. &#x20;       'Tempat wisata ini sepertinya memang ditujukan untuk wisata keluarga di Bandung. Di sini kita bisa menikmati suasana kawasan yang tertata rapi dan alami. Pada awalnya, floating market Lembang tidak begitu luas. Tapi sekarang sudah ekspansi dan memiliki banyak objek menarik baru. Nama floating market ini sepertinya merujuk pada stand tempat jualan makanan yang berada dalam perahu.',
-119. &#x20;   openDays: 'Open Everyday',
-120. &#x20;   openTime: '09:00 - 17:00',
-121. &#x20;   ticketPrice: 'Rp 20000',
-122. &#x20;   imageAsset: 'images/floating-market.png',
-123. &#x20;   imageUrls: \[
-124. &#x20;     'https://media-cdn.tripadvisor.com/media/photo-o/17/f9/ff/f8/floating-market-bandung.jpg',
-125. &#x20;     'https://media-cdn.tripadvisor.com/media/photo-p/1a/86/d3/cd/20200103-125059-largejpg.jpg',
-126. &#x20;     'https://media-cdn.tripadvisor.com/media/photo-p/19/ce/b4/9b/img20181224120857-largejpg.jpg',
-127. &#x20;   ],
-128. &#x20; ),
-129. &#x20; TourismPlace(
-130. &#x20;   name: 'Kawah Putih',
-131. &#x20;   location: 'Ciwidey',
-132. &#x20;   description:
-133. &#x20;       'Kawah Putih adalah tempat wisata di Bandung yang paling terkenal. Berlokasi di Ciwidey, Jawa Barat, kurang lebih sekitar 50 KM arah selatan kota Bandung, Kawah Putih adalah sebuah danau yang terbentuk akibat dari letusan Gunung Patuha. Sesuai dengan namanya, tanah yang ada di kawasan ini berwarna putih akibat dari pencampuran unsur belerang.',
-134. &#x20;   openDays: 'Open Everyday',
-135. &#x20;   openTime: '07:00 - 17:00',
-136. &#x20;   ticketPrice: 'Rp 15000',
-137. &#x20;   imageAsset: 'images/kawah-putih.jpg',
-138. &#x20;   imageUrls: \[
-139. &#x20;     'https://media-cdn.tripadvisor.com/media/photo-o/0b/6e/7c/ce/rocks-sticking-out-of.jpg',
-140. &#x20;     'https://media-cdn.tripadvisor.com/media/photo-p/0b/35/30/14/white-crater.jpg',
-141. &#x20;     'https://media-cdn.tripadvisor.com/media/photo-o/0a/8b/9a/79/2945-t00572-www-initempatwisat.jpg',
-142. &#x20;   ],
-143. &#x20; ),
-144. &#x20; TourismPlace(
-145. &#x20;   name: 'Ranca Upas',
-146. &#x20;   location: 'Ciwidey',
-147. &#x20;   description:
-148. &#x20;       'Ranca Upas Ciwidey adalah kawasan bumi perkemahan di bawah pengelolaan perhutani. Tempat ini berada di kawasan wisata Bandung Selatan, satu lokasi dengan kawah putih, kolam Cimanggu dan situ Patenggang. Banyak hal yang bisa dilakukan di kawasan wisata ini, seperti berkemah, berinteraksi dengan rusa, sampai bermain di water park dan mandi air panas.',
-149. &#x20;   openDays: 'Open Everyday',
-150. &#x20;   openTime: '24 hours',
-151. &#x20;   ticketPrice: 'Rp 20000',
-152. &#x20;   imageAsset: 'images/ranca-upas.jpg',
-153. &#x20;   imageUrls: \[
-154. &#x20;     'https://media-cdn.tripadvisor.com/media/photo-o/1a/e0/7f/9c/kampung-cai-ranca-upas.jpg',
-155. &#x20;     'https://media-cdn.tripadvisor.com/media/photo-w/13/ee/2f/87/ranca-upas.jpg',
-156. &#x20;     'https://media-cdn.tripadvisor.com/media/photo-w/13/ee/27/0a/ranca-upas.jpg',
-157. &#x20;   ],
-158. &#x20; ),
-159. ];
+```
+class TourismPlace {
+  String name;
+  String location;
+  String description;
+  String openDays;
+  String openTime;
+  String ticketPrice;
+  String imageAsset;
+  List<String> imageUrls;
+ 
+  TourismPlace({
+    required this.name,
+    required this.location,
+    required this.description,
+    required this.openDays,
+    required this.openTime,
+    required this.ticketPrice,
+    required this.imageAsset,
+    required this.imageUrls,
+  });
+}
+ 
+var tourismPlaceList = [
+  TourismPlace(
+    name: 'Farm House Lembang',
+    location: 'Lembang',
+    description:
+        'Berada di jalur utama Bandung-Lembang, Farm House menjadi objek wisata yang tidak pernah sepi pengunjung. Selain karena letaknya strategis, kawasan ini juga menghadirkan nuansa wisata khas Eropa. Semua itu diterapkan dalam bentuk spot swafoto Instagramable.',
+    openDays: 'Open Everyday',
+    openTime: '09:00 - 20:00',
+    ticketPrice: 'Rp 25000',
+    imageAsset: 'images/farm-house.jpg',
+    imageUrls: [
+      'https://media-cdn.tripadvisor.com/media/photo-s/0d/7c/59/70/farmhouse-lembang.jpg',
+      'https://media-cdn.tripadvisor.com/media/photo-w/13/f0/22/f6/photo3jpg.jpg',
+      'https://media-cdn.tripadvisor.com/media/photo-m/1280/16/a9/33/43/liburan-di-farmhouse.jpg'
+    ],
+  ),
+  TourismPlace(
+    name: 'Observatorium Bosscha',
+    location: 'Lembang',
+    description:
+        'Memiliki beberapa teleskop, antara lain, Refraktor Ganda Zeiss, Schmidt Bimasakti, Refraktor Bamberg, Cassegrain GOTO, dan Teleskop Surya. Refraktor Ganda Zeiss adalah jenis teleskop terbesar untuk meneropong bintang. Benda ini diletakkan pada atap kubah sehingga saat teropong digunakan, atap tersebut harus dibuka. Observatorium Bosscha boleh dikunjungi oleh siapa pun, tanpa tiket. Namun, bagi yang ingin menggunakan teleskop Zeiss, wajib mendaftarkan diri. Untuk instansi atau lembaga pendidikan, diberikan jadwal hari Selasa sampai Jumat. Sementara itu, kunjungan individu dibuka setiap hari Sabtu.',
+    openDays: 'Open Tuesday - Saturday',
+    openTime: '09:00 - 14:30',
+    ticketPrice: 'Rp 20000',
+    imageAsset: 'images/bosscha.jpg',
+    imageUrls: [
+      'https://media-cdn.tripadvisor.com/media/photo-o/12/6b/63/0b/bosscha-observatory.jpg',
+      'https://media-cdn.tripadvisor.com/media/photo-p/0d/6a/88/9b/photo3jpg.jpg',
+      'https://media-cdn.tripadvisor.com/media/photo-o/11/3f/04/39/p-20171111-110220-largejpg.jpg',
+    ],
+  ),
+  TourismPlace(
+    name: 'Jalan Asia Afrika',
+    location: 'Kota Bandung',
+    description:
+        'Jalan Asia Afrika di Bandung memiliki kaitan yang sangat erat dengan pendirian kota Kembang ini. Karena pada saat itu, Gubernur Jenderal Herman Willem Deaendels dari Belanda menancapkan tongkatnya saat memerintahkan pendirian kota ini, yang kemudian diabadikan menjadi tugu Bandung Nol Kilometer.',
+    openDays: 'Open Everyday',
+    openTime: '24 hours',
+    ticketPrice: 'Free',
+    imageAsset: 'images/jalan-asia-afrika.jpg',
+    imageUrls: [
+      'https://media-cdn.tripadvisor.com/media/photo-o/0d/c2/e7/e6/quotes-kota-bandung.jpg',
+      'https://media-cdn.tripadvisor.com/media/photo-w/17/f4/44/01/jalan-asia-afrika.jpg',
+      'https://media-cdn.tripadvisor.com/media/photo-s/0a/ef/36/e2/jalan-asia-afrika.jpg',
+    ],
+  ),
+  TourismPlace(
+    name: 'Stone Garden',
+    location: 'Padalarang',
+    description:
+        'Stone Garden atau Taman Batu di Padalarang – Bandung ini adalah nama secara harafiah untuk apa yang akan kita lihat jika berada di sana. Hamparan batu yang artistik membuat kita merasa tidak sedang berada di Bandung, apalagi di Padalarang. Hamparan batu yang dimaksud bukan terhampar begitu saja di atas tanah luas yang menjadi permukaannya. Batu-batu besar yang ukuran pastinya bervariasi tersusun seperti memiliki suatu formasi matematis.',
+    openDays: 'Open Everyday',
+    openTime: '06:00 - 17:00',
+    ticketPrice: 'Rp 3000',
+    imageAsset: 'images/stone-garden.jpg',
+    imageUrls: [
+      'https://media-cdn.tripadvisor.com/media/photo-o/15/01/d7/4b/p-20180510-153310-01.jpg',
+      'https://media-cdn.tripadvisor.com/media/photo-w/15/68/00/32/stone-garden-citatah.jpg',
+      'https://media-cdn.tripadvisor.com/media/photo-o/0d/a2/cb/05/stone-garden-citatah.jpg',
+    ],
+  ),
+  TourismPlace(
+    name: 'Taman Film Pasopati',
+    location: 'Kota Bandung',
+    description:
+        'Menjadi salah satu tempat wisata di Bandung yang favorit, tentu Taman Film ini memiliki fasilitas cukup memadai. Pemberian fasilitas ini memiliki harapan para pengunjung akan merasa nyaman dan tak segan2 untuk kembali berkunjung terus menerus kesini. Beberapa fasilitas taman yang bisa kamu nikmati diantaranya seperti layar videotron besar berukuran 4×8 untuk memutar berbagai macam pilihan film seperti Film Indonesia, Bollywood, Korea, ataupun Indie Bandung.',
+    openDays: 'Open Everyday',
+    openTime: '24 hours',
+    ticketPrice: 'Free',
+    imageAsset: 'images/taman-film.jpg',
+    imageUrls: [
+      'https://media-cdn.tripadvisor.com/media/photo-o/08/8b/87/50/bandung-movie-park.jpg',
+      'https://media-cdn.tripadvisor.com/media/photo-o/17/67/d5/53/img-20190505-114509-largejpg.jpg',
+      'https://media-cdn.tripadvisor.com/media/photo-w/09/73/33/05/taman-film-pasopati.jpg',
+    ],
+  ),
+  TourismPlace(
+    name: 'Museum Geologi',
+    location: 'Kota Bandung',
+    description:
+        'Museum Geologi didirikan pada tanggal 16 Mei 1929. Museum ini telah direnovasi dengan dana bantuan dari JICA (Japan International Cooperation Agency). Setelah mengalami renovasi, Museum Geologi dibuka kembali dan diresmikan oleh Wakil Presiden RI, Megawati Soekarnoputri pada tanggal 23 Agustus 2000. Sebagai salah satu monumen bersejarah, museum berada di bawah perlindungan pemerintah dan merupakan peninggalan nasional. Dalam Museum ini, tersimpan dan dikelola materi-materi geologi yang berlimpah, seperti fosil, batuan, mineral. Kesemuanya itu dikumpulkan selama kerja lapangan di Indonesia sejak 1850.',
+    openDays: 'Open Saturday - Thursday',
+    openTime: '09:00 - 15:30',
+    ticketPrice: 'Rp 3000',
+    imageAsset: 'images/museum-geologi.jpg',
+    imageUrls: [
+      'https://media-cdn.tripadvisor.com/media/photo-w/19/1c/8e/f7/geology-museum.jpg',
+      'https://media-cdn.tripadvisor.com/media/photo-o/11/a7/35/b7/geology-museum.jpg',
+      'https://media-cdn.tripadvisor.com/media/photo-s/1a/55/e0/dc/geology-museum.jpg',
+    ],
+  ),
+  TourismPlace(
+    name: 'Floating Market',
+    location: 'Lembang',
+    description:
+        'Tempat wisata ini sepertinya memang ditujukan untuk wisata keluarga di Bandung. Di sini kita bisa menikmati suasana kawasan yang tertata rapi dan alami. Pada awalnya, floating market Lembang tidak begitu luas. Tapi sekarang sudah ekspansi dan memiliki banyak objek menarik baru. Nama floating market ini sepertinya merujuk pada stand tempat jualan makanan yang berada dalam perahu.',
+    openDays: 'Open Everyday',
+    openTime: '09:00 - 17:00',
+    ticketPrice: 'Rp 20000',
+    imageAsset: 'images/floating-market.png',
+    imageUrls: [
+      'https://media-cdn.tripadvisor.com/media/photo-o/17/f9/ff/f8/floating-market-bandung.jpg',
+      'https://media-cdn.tripadvisor.com/media/photo-p/1a/86/d3/cd/20200103-125059-largejpg.jpg',
+      'https://media-cdn.tripadvisor.com/media/photo-p/19/ce/b4/9b/img20181224120857-largejpg.jpg',
+    ],
+  ),
+  TourismPlace(
+    name: 'Kawah Putih',
+    location: 'Ciwidey',
+    description:
+        'Kawah Putih adalah tempat wisata di Bandung yang paling terkenal. Berlokasi di Ciwidey, Jawa Barat, kurang lebih sekitar 50 KM arah selatan kota Bandung, Kawah Putih adalah sebuah danau yang terbentuk akibat dari letusan Gunung Patuha. Sesuai dengan namanya, tanah yang ada di kawasan ini berwarna putih akibat dari pencampuran unsur belerang.',
+    openDays: 'Open Everyday',
+    openTime: '07:00 - 17:00',
+    ticketPrice: 'Rp 15000',
+    imageAsset: 'images/kawah-putih.jpg',
+    imageUrls: [
+      'https://media-cdn.tripadvisor.com/media/photo-o/0b/6e/7c/ce/rocks-sticking-out-of.jpg',
+      'https://media-cdn.tripadvisor.com/media/photo-p/0b/35/30/14/white-crater.jpg',
+      'https://media-cdn.tripadvisor.com/media/photo-o/0a/8b/9a/79/2945-t00572-www-initempatwisat.jpg',
+    ],
+  ),
+  TourismPlace(
+    name: 'Ranca Upas',
+    location: 'Ciwidey',
+    description:
+        'Ranca Upas Ciwidey adalah kawasan bumi perkemahan di bawah pengelolaan perhutani. Tempat ini berada di kawasan wisata Bandung Selatan, satu lokasi dengan kawah putih, kolam Cimanggu dan situ Patenggang. Banyak hal yang bisa dilakukan di kawasan wisata ini, seperti berkemah, berinteraksi dengan rusa, sampai bermain di water park dan mandi air panas.',
+    openDays: 'Open Everyday',
+    openTime: '24 hours',
+    ticketPrice: 'Rp 20000',
+    imageAsset: 'images/ranca-upas.jpg',
+    imageUrls: [
+      'https://media-cdn.tripadvisor.com/media/photo-o/1a/e0/7f/9c/kampung-cai-ranca-upas.jpg',
+      'https://media-cdn.tripadvisor.com/media/photo-w/13/ee/2f/87/ranca-upas.jpg',
+      'https://media-cdn.tripadvisor.com/media/photo-w/13/ee/27/0a/ranca-upas.jpg',
+    ],
+  ),
+];
+```
 {% endtab %}
 {% endtabs %}
 
